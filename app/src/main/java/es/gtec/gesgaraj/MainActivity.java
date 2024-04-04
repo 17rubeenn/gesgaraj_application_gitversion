@@ -79,7 +79,7 @@ public MainActivity(){
                     Statement stm = conexion.createStatement();
                     ResultSet rs = stm.executeQuery(sql);
 
-                    if(rs.next()){ //VERIFICA LA CONSULTA DE ARRIBA
+                    if(rs.next()){ //VERIFICA LA CONSULTA DE ARRIBA "PRUEBA PARA COMMIT"
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
