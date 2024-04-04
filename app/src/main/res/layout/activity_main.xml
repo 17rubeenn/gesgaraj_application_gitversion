@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+
+    android:background="@drawable/backgroundlog_glass_fixed"
+    android:orientation="vertical"
+
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/txt_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="136dp"
+
+        android:drawableStart="@drawable/baseline_person_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+
+        android:hint="@string/usuario"
+        android:inputType="text"
+        android:keepScreenOn="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/txt_contrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="138dp"
+        android:drawableStart="@drawable/baseline_lock_24"
+        android:drawablePadding="10sp"
+        android:ems="10"
+        android:hint="@string/contraseña"
+
+
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_usuario"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btn_entrar"
+        android:layout_width="139dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="228dp"
+
+        android:backgroundTint="@color/blue_bottom_color_gtec"
+        android:text="@string/entrar"
+        android:textSize="18sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
