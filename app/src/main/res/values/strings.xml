@@ -5,4 +5,25 @@
     <string name="entrar">Entrar</string>
 
 
+    <string name="screen1tit">GESTION SIMPLIFICADA</string>
+    <string name="screen1desc">Gestiona tus estacionamientos desde cualquier lugar utilizando
+        unicamente tu dispositivo movil.</string>
+
+    <string name="screen2tit">ACTUALIZACION EN TIEMPO REAL</string>
+    <string name="screen2desc">Recibe un seguimiento constante de la actividad
+        en tus estacionamientos con graficos y estadisticas avanzadas.</string>
+
+    <string name="screen3tit">SEGURIDAD PERSONALIZADA</string>
+    <string name="screen3desc">Diseñada exclusivamente  para nuestros usuarios,
+        permitiendo un control total y la capacidad de gestionar cualquier fallo en la seguridad al instante.</string>
+
+    <string name="comenzar_tit">ABIERTO A CAMBIOS Y ACTUALIZACIONES</string>
+    <string name="comenzar_desc">Desarrollada bajo criterio, facilita la adaptacion de nuevos conceptos dentro de la aplicacion.</string>
+    <string name="btn_comenzar">COMENZAR</string>
+
+    <string name="omitir_navigation">OMITIR</string>
+    <string name="atras_navigation">ATRAS</string>
+    <string name="siguiente_navigation">SIGUIENTE</string>
+
+
 </resources>

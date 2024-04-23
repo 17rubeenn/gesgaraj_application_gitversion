@@ -7,5 +7,8 @@
 
     <style name="Theme.Gesgaraj" parent="Base.Theme.Gesgaraj" />
 
+    <style name="CustomFontStyle">
+        <item name="android:fontFamily">@font/onboarding_font</item>
+    </style>
 
 </resources>

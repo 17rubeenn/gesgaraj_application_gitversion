@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.os.Handler;
@@ -30,10 +31,34 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+
+                if (isFirstTimeUser()) {
+                    Intent intent = new Intent(SplashScreen.this, OnboardingNavigation.class);
+                    startActivity(intent);
+                    finish();
+                    // Actualiza SharedPreferences para indicar que ya no es la primera vez
+                    SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
+                    editor.putBoolean("firstTime", false);
+                    editor.apply();
+
+                } else {
+
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         }, 3000);
+
+
+
     }
+
+    private boolean isFirstTimeUser() {
+        SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        return prefs.getBoolean("firstTime", true);
+    }
+
+
 }

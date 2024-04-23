@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:flow_horizontalAlign="center"
+    android:background="@drawable/screen_default">
+
+    <ImageView
+        android:id="@+id/sliderImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/onboarding1"/>
+    <TextView
+        android:id="@+id/sliderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/onboarding_font"
+        android:text="@string/screen1tit"
+        android:layout_marginHorizontal="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/blue_gesgaraj"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/sliderDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="@string/screen1desc"
+        android:fontFamily="@font/onboarding_font"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/blue_gesgaraj"
+        android:textSize="14sp"/>
+</LinearLayout>
