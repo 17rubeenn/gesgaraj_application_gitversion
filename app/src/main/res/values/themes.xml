@@ -10,5 +10,11 @@
     <style name="CustomFontStyle">
         <item name="android:fontFamily">@font/onboarding_font</item>
     </style>
+    
+    <style name="BottomNavigation">
+        <item name="android:background">@color/white</item>
+        <item name="itemIconTint">@color/blue_bottom_color_gtec</item>
+
+    </style>
 
 </resources>

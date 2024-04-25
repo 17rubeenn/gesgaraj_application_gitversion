@@ -24,6 +24,8 @@
     <string name="omitir_navigation">OMITIR</string>
     <string name="atras_navigation">ATRAS</string>
     <string name="siguiente_navigation">SIGUIENTE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
