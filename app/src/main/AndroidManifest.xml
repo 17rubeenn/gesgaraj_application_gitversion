@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Gesgaraj"
         tools:targetApi="31">
         <activity
+            android:name=".CardViewGrafico"
+            android:exported="false" />
+        <activity
             android:name=".OnboardingStarted"
             android:exported="false" />
         <activity
