@@ -6,10 +6,13 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
+        // Otros repositorios...
         mavenCentral()
+        // Otros repositorios...
+        jcenter()
+        // Otros repositorios...
     }
 }
 

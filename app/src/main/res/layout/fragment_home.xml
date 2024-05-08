@@ -73,14 +73,14 @@
                     android:layout_height="match_parent">
                 
                     <ImageView
-                        android:src="@drawable/piechard"
+                        android:src="@drawable/piechart"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
                         android:layout_marginTop="12dp"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:text="PieChard"
+                        android:text="Ocupación"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     
