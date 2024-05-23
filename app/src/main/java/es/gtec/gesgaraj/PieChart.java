@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,15 +14,20 @@ import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
 
+import es.gtec.gesgaraj.conexion.ConexionBD; // Importa la clase ConexionBD
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 public class PieChart extends AppCompatActivity {
     Button btn_salirpie;
     AnyChartView anyChartView;
-    String[] garaje = {"ocupado", "vacio", "reservado"};
-    int[] valores = {20, 30, 5};
+    ConexionBD conexionBD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +35,13 @@ public class PieChart extends AppCompatActivity {
 
         btn_salirpie = findViewById(R.id.btn_salirpie);
         anyChartView = findViewById(R.id.any_chart_view);
-        setupPieChart();
+        conexionBD = new ConexionBD(); // iniciacion variable
+        Intent intent = getIntent();
+        int ocupado = intent.getIntExtra("ocupado", 0);
+        int vacio = intent.getIntExtra("vacio", 0);
+        int reservado = intent.getIntExtra("reservado", 0);
+
+        setupPieChart(ocupado, vacio, reservado);
 
         btn_salirpie.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,17 +51,47 @@ public class PieChart extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
-    public void setupPieChart(){
-        Pie pie = AnyChart.pie();
-        List<DataEntry> dateEntries = new ArrayList<>();
+    public void setupPieChart(int ocupado, int vacio, int reservado){
 
-        for (int i = 0; i < garaje.length; i++){
-            dateEntries.add(new ValueDataEntry(garaje[i], valores[i]));
+        if (ocupado == 0 && vacio == 0 && reservado == 0) {
+            Connection connection = null;
+            PreparedStatement statement = null;
+            ResultSet resultSet = null;
+
+            try {
+                connection = conexionBD.connect();
+                String query = "SELECT ocupado, vacio, reservado FROM ocupacion";
+                statement = connection.prepareStatement(query);
+                resultSet = statement.executeQuery();
+
+                if (resultSet.next()) {
+                    ocupado = resultSet.getInt("ocupado");
+                    vacio = resultSet.getInt("vacio");
+                    reservado = resultSet.getInt("reservado");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                Log.e("Error de conexión SQL: ", e.getMessage());
+            } finally {
+                try {
+                    if (resultSet != null) resultSet.close();
+                    if (statement != null) statement.close();
+                    if (connection != null) connection.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        pie.data(dateEntries);
+
+        Pie pie = AnyChart.pie();
+        List<DataEntry> dataEntries = new ArrayList<>();
+        dataEntries.add(new ValueDataEntry("Ocupado", ocupado));
+        dataEntries.add(new ValueDataEntry("Vacio", vacio));
+        dataEntries.add(new ValueDataEntry("Reservado", reservado));
+        pie.data(dataEntries);
         anyChartView.setChart(pie);
     }
 }

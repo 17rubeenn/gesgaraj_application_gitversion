@@ -20,11 +20,21 @@ public class HomeFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         CardView cardView = rootView.findViewById(R.id.grafico1);
+        CardView cardView2 = rootView.findViewById(R.id.grafico2);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent(getActivity(), PieChart.class);
+                startActivity(intent);
+            }
+        });
+
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), ColumnChart.class);
                 startActivity(intent);
             }
         });
