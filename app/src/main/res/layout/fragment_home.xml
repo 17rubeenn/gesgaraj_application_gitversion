@@ -18,7 +18,7 @@
             android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        
+
             <ImageView
                 android:layout_alignParentRight="true"
                 android:src="@drawable/usericon"
@@ -71,7 +71,7 @@
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                
+
                     <ImageView
                         android:src="@drawable/piechart"
                         android:layout_width="80dp"
@@ -83,10 +83,10 @@
                         android:text="Ocupación"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                    
+
                 </LinearLayout>
 
-                
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -116,7 +116,7 @@
                         android:layout_marginTop="12dp"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:text="Ingresos"
+                        android:text="Facturacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 

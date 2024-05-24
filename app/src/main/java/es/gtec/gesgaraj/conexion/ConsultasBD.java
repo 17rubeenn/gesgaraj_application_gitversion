@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,8 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import es.gtec.gesgaraj.ColumnChart;
 import es.gtec.gesgaraj.PieChart;
-import es.gtec.gesgaraj.R;
 
 public class ConsultasBD extends AppCompatActivity {
 
@@ -62,6 +61,45 @@ public class ConsultasBD extends AppCompatActivity {
         finish();
     }
 
+    private double[] obtenerDatosFacturacion(){
+        double[] datos2 = new double[7];
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:sqlserver://" + ip + ";databaseName=" + basedatos, usuario, password);
+            Statement statement = connection.createStatement();
+            String query = "SELECT Lunes, Martes, Miercoles, Jueves, Viernes, Sabado, Domingo FROM facturacion";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                datos2[0] = resultSet.getDouble("Lunes");
+                datos2[1] = resultSet.getDouble("Martes");
+                datos2[2] = resultSet.getDouble("Miercoles");
+                datos2[3] = resultSet.getDouble("Jueves");
+                datos2[4] = resultSet.getDouble("Viernes");
+                datos2[5] = resultSet.getDouble("Sabado");
+                datos2[6] = resultSet.getDouble("Domingo");
+
+
+            }
+            connection.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }return datos2;
+    }
+    private void pasarDatosOcupacionAColumnChart(){
+        double[] datosFacturacion = obtenerDatosFacturacion();
+
+        Intent intent = new Intent(this, ColumnChart.class);
+        intent.putExtra("Lunes", datosFacturacion[0]);
+        intent.putExtra("Martes", datosFacturacion[1]);
+        intent.putExtra("Miercoles", datosFacturacion[2]);
+        intent.putExtra("Jueves", datosFacturacion[3]);
+        intent.putExtra("Viernes", datosFacturacion[4]);
+        intent.putExtra("Sabado", datosFacturacion[5]);
+        intent.putExtra("Domingo", datosFacturacion[6]);
+        startActivity(intent);
+
+        finish();
+    }
 
 
 }

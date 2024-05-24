@@ -13,6 +13,8 @@ import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
+import com.anychart.enums.Align;
+import com.anychart.enums.LegendLayout;
 
 import es.gtec.gesgaraj.conexion.ConexionBD; // Importa la clase ConexionBD
 
@@ -86,12 +88,23 @@ public class PieChart extends AppCompatActivity {
             }
         }
 
+
         Pie pie = AnyChart.pie();
         List<DataEntry> dataEntries = new ArrayList<>();
         dataEntries.add(new ValueDataEntry("Ocupado", ocupado));
         dataEntries.add(new ValueDataEntry("Vacio", vacio));
         dataEntries.add(new ValueDataEntry("Reservado", reservado));
         pie.data(dataEntries);
+
+        pie.legend().title().enabled(true);
+        pie.legend().title()
+                .text("Ocupacion en tiempo real")
+                .padding(0d, 0d, 20d, 0d);
+
+        pie.legend()
+                .position("center-bottom")
+                .itemsLayout(LegendLayout.HORIZONTAL)
+                .align(Align.CENTER);
         anyChartView.setChart(pie);
     }
 }
