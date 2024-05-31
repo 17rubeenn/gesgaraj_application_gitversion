@@ -39,7 +39,7 @@ public MainActivity(){
         txt_contrasena=(EditText) findViewById(R.id.txt_contrasena);
         btn_entrar=(Button) findViewById(R.id.btn_entrar);
 
-        btn_entrar.setOnClickListener(new View.OnClickListener() { //CUANDO EL BOTON SEA ACTIVADO REALIZARA TODO LO ANTERIOR PROGRAMADO EN EL METODO
+        btn_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new MainActivity.log().execute("");
@@ -79,7 +79,7 @@ public MainActivity(){
                     Statement stm = conexion.createStatement();
                     ResultSet rs = stm.executeQuery(sql);
 
-                    if(rs.next()){ //VERIFICA LA CONSULTA DE ARRIBA "PRUEBA PARA COMMIT"
+                    if(rs.next()){
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -89,7 +89,7 @@ public MainActivity(){
                             }
                         });
 
-                        txt_usuario.setText(""); // LIMPIA LOS DATOS
+                        txt_usuario.setText("");
                         txt_contrasena.setText("");
                     } else {
                         runOnUiThread(new Runnable() {

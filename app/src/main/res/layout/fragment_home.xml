@@ -38,7 +38,7 @@
             <TextView
                 android:layout_marginTop="4dp"
                 android:layout_below="@+id/txt_dashboard"
-                android:text="2 funciones disponibles"
+                android:text="7 funciones disponibles"
                 android:textSize="14sp"
                 android:textColor="@color/white"
                 android:layout_width="wrap_content"

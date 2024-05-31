@@ -43,7 +43,7 @@ public class VennDiagram extends AppCompatActivity {
             }
         });
 
-        // Obtén los datos para el gráfico de Venn
+
         int mañana = 0;
         int tarde = 0;
         int noche = 0;
@@ -61,7 +61,7 @@ public class VennDiagram extends AppCompatActivity {
             noche = conteoHoras.getOrDefault("noche", 0);
         }
 
-        // Configuración del gráfico de Venn
+
         Venn venn = AnyChart.venn();
         List<DataEntry> data = new ArrayList<>();
         data.add(new ValueDataEntry("Mañana", mañana));
@@ -69,7 +69,7 @@ public class VennDiagram extends AppCompatActivity {
         data.add(new ValueDataEntry("Noche", noche));
         venn.data(data);
 
-        // Configuración adicional del gráfico
+
         venn.stroke("2 #FFFFFF");
         venn.labels().format("{%Name}");
         venn.tooltip().titleFormat("{%Name}");

@@ -45,7 +45,7 @@ public class ResourceChart extends AppCompatActivity {
 
         List<DataEntry> data = new ArrayList<>();
 
-        // Datos de matrículas y sanciones
+
         String[] matriculas = {"7264 MDF", "8392 KLP", "9458 GHT", "2309 BFD"};
         boolean[] sanciones = {true, false, true, false};
         String[] descripciones = {"Con sanción", "Libre de sanciones", "Con sanción", "Libre de sanciones"};

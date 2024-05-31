@@ -46,9 +46,6 @@ public class ConsultasBD extends AppCompatActivity {
         pasarDatosOcupacionALineChart();
 
 
-
-
-
     }
 
     private int[] obtenerDatosOcupacion() {
@@ -147,7 +144,6 @@ public class ConsultasBD extends AppCompatActivity {
         return null;
     }
 
-    // Método para convertir un HashMap a Bundle
     public Bundle convertMapToBundle(HashMap<String, Integer> map) {
         Bundle bundle = new Bundle();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
@@ -241,7 +237,7 @@ public class ConsultasBD extends AppCompatActivity {
         return null;
     }
 
-    // Método para convertir un HashMap a Bundle
+
     public Bundle convertMapToBundle2(HashMap<String, Integer> map) {
         Bundle bundle2 = new Bundle();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {

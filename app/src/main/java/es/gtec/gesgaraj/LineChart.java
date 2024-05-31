@@ -52,14 +52,14 @@ public class LineChart extends AppCompatActivity {
             }
         });
 
-        // Obtener los datos de facturación anual desde la base de datos
+
         double[] datosFacturacionAnual = obtenerDatosFacturacionAnual();
 
-        // Configurar el gráfico de líneas con los datos obtenidos
+
         setupLineChart(datosFacturacionAnual);
     }
 
-    // Método para obtener los datos de facturación anual desde la base de datos
+
     private double[] obtenerDatosFacturacionAnual() {
         double[] datosFacturacionAnual = new double[12];
         Connection connection = null;
@@ -100,7 +100,7 @@ public class LineChart extends AppCompatActivity {
         return datosFacturacionAnual;
     }
 
-    // Método para configurar el gráfico de líneas con los datos obtenidos
+
     private void setupLineChart(double[] datosFacturacionAnual) {
         Cartesian cartesian = AnyChart.line();
 

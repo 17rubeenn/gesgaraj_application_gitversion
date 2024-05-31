@@ -36,7 +36,6 @@ public class SplashScreen extends AppCompatActivity {
                     Intent intent = new Intent(SplashScreen.this, OnboardingNavigation.class);
                     startActivity(intent);
                     finish();
-                    // Actualiza SharedPreferences para indicar que ya no es la primera vez
                     SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
                     editor.putBoolean("firstTime", false);
                     editor.apply();

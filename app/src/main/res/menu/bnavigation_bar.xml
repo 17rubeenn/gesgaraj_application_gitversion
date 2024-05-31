@@ -6,7 +6,7 @@
         android:title="" />
     <item
         android:id="@+id/settings"
-        android:icon="@drawable/baseline_settings_24_bnavigationbar"
+        android:icon="@drawable/baseline_add_24_bnavigationbar"
         android:title="" />
     <item
         android:id="@+id/logout"
