@@ -6,11 +6,15 @@
     tools:context=".SettingsFragment"
     android:background="@drawable/backgroundlog_desenfoque">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SETTINGS FRAGMENT"
-        android:textSize="20sp"
-        android:layout_centerInParent="true"/>
+    <ImageView
+        android:id="@+id/img_usuario"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:src="@drawable/usericon"
+        android:layout_centerInParent="true"
+        android:clickable="true"
+        android:onClick="selectImage"/>
+
+
 
 </RelativeLayout>

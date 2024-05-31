@@ -16,6 +16,24 @@
         android:theme="@style/Theme.Gesgaraj"
         tools:targetApi="31">
         <activity
+            android:name=".ResourceChart"
+            android:exported="false" />
+        <activity
+            android:name=".RadarChart"
+            android:exported="false" />
+        <activity
+            android:name=".LineChart"
+            android:exported="false" />
+        <activity
+            android:name=".CircularGauge"
+            android:exported="false" />
+        <activity
+            android:name=".VennDiagram"
+            android:exported="false" />
+        <activity
+            android:name=".FunnelChart"
+            android:exported="false" />
+        <activity
             android:name=".ColumnChart"
             android:exported="false" />
         <activity
